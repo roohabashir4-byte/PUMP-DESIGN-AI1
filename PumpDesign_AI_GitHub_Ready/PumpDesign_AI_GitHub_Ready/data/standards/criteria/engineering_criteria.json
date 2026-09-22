@@ -1,0 +1,104 @@
+[
+  {
+    "criterion_id": "FLOW-INPUT-MODE",
+    "name": "Design flow establishment",
+    "rule": "Designer may provide a verified design flow directly. If so, demand calculation is not required unless independently requested or needed for another check.",
+    "application": [
+      "transfer",
+      "booster",
+      "submersible",
+      "recirculation"
+    ],
+    "status": "ACTIVE",
+    "source_ids": []
+  },
+  {
+    "criterion_id": "AHJ-OPTIONAL",
+    "name": "AHJ input",
+    "rule": "AHJ is optional. If omitted, the system must use the selected jurisdiction/default engineering basis and disclose that project-specific AHJ requirements were not supplied.",
+    "application": [
+      "all"
+    ],
+    "status": "ACTIVE",
+    "source_ids": [
+      "BCP-2021"
+    ]
+  },
+  {
+    "criterion_id": "APP-E-APPLICABILITY",
+    "name": "IPC Appendix E applicability",
+    "rule": "Do not automatically apply Appendix E. Use it only when adopted/referenced or explicitly selected as the accepted design method.",
+    "application": [
+      "booster",
+      "water_distribution"
+    ],
+    "status": "ACTIVE",
+    "source_ids": [
+      "IPC-2021-APPE"
+    ]
+  },
+  {
+    "criterion_id": "PIPE-ID",
+    "name": "Hydraulic diameter input",
+    "rule": "Use actual internal pipe diameter, not nominal designation, for velocity and friction calculations. Obtain ID from verified pipe/product data.",
+    "application": [
+      "all"
+    ],
+    "status": "ACTIVE",
+    "source_ids": [
+      "ASHRAE-F25-CH22"
+    ]
+  },
+  {
+    "criterion_id": "HYDRAULIC-METHOD",
+    "name": "Hydraulic method selection",
+    "rule": "Use a recognized hydraulic method. Darcy-Weisbach is general-purpose; Hazen-Williams may be used for applicable water-piping calculations with a defensible C basis.",
+    "application": [
+      "all"
+    ],
+    "status": "ACTIVE",
+    "source_ids": [
+      "ASHRAE-F25-CH22",
+      "ASHRAE-F25-CH3"
+    ]
+  },
+  {
+    "criterion_id": "DEMAND-DIVERSITY",
+    "name": "Service-water diversity",
+    "rule": "When the designer has not supplied a design flow, probable simultaneous demand/diversity must be established using the applicable code or recognized method; do not assume all fixtures operate simultaneously unless justified.",
+    "application": [
+      "booster"
+    ],
+    "status": "ACTIVE",
+    "source_ids": [
+      "IPC-2021-APPE",
+      "ASHRAE-F25-CH22"
+    ]
+  },
+  {
+    "criterion_id": "ELEVATION-PRESSURE",
+    "name": "Elevation head",
+    "rule": "Include elevation between source and critical outlet in available-pressure/TDH calculations. Convert elevation to pressure/head consistently with the calculation unit system.",
+    "application": [
+      "booster",
+      "transfer",
+      "submersible"
+    ],
+    "status": "ACTIVE",
+    "source_ids": [
+      "IPC-2021-APPE"
+    ]
+  },
+  {
+    "criterion_id": "HOT-WATER-PRESSURE",
+    "name": "Hot-water pressure losses",
+    "rule": "Include pressure losses through the heater and applicable mixing/anti-scald devices when they form part of the hydraulic path.",
+    "application": [
+      "hot_water_recirculation"
+    ],
+    "status": "ACTIVE",
+    "source_ids": [
+      "ASHRAE-A23-CH51"
+    ]
+  }
+]

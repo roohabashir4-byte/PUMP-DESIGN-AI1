@@ -1,0 +1,22 @@
+{
+  "registry_name": "PumpDesign AI Pipe Registry",
+  "version": "1.0",
+  "status": "engineering_registry_requires_project_product_verification",
+  "materials": [
+    "MS/carbon steel",
+    "PVC-U",
+    "HDPE/PE100",
+    "PP-R"
+  ],
+  "sources": {
+    "MS/carbon steel": "ASME B36.10",
+    "PVC-U": "ASTM D1785",
+    "HDPE/PE100": "ISO 4427-2:2019",
+    "PP-R": "ISO 15874-2:2013"
+  },
+  "notes": [
+    "Registry values are candidate engineering data and must be confirmed against the applicable edition and selected manufacturer's product data before final issue.",
+    "Nominal size is not used as hydraulic diameter; actual inside diameter is used.",
+    "No universal velocity limit is embedded in the registry. Velocity criteria are supplied by the applicable engineering criteria/RAG layer."
+  ]
+}

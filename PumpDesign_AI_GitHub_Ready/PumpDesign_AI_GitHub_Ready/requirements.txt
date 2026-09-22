@@ -1,0 +1,8 @@
+pydantic>=2.10,<3
+streamlit>=1.64,<2
+groq>=0.31,<1
+scikit-learn>=1.5,<2
+scipy>=1.12,<2
+faiss-cpu>=1.8,<2
+
+reportlab>=4.2,<5

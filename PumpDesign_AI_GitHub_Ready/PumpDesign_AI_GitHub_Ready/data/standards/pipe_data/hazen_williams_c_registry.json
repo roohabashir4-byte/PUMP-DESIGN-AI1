@@ -1,0 +1,503 @@
+{
+  "name": "Hazen-Williams C Value Registry",
+  "version": "1.0",
+  "unit": "dimensionless",
+  "selection_rule": [
+    "Do not use one universal C value for all materials.",
+    "Prefer a governing project/AHJ/reference value when one is explicitly applicable.",
+    "Otherwise use a primary engineering reference default where available.",
+    "Where only a secondary table is available, preserve the published range and do not silently convert it to a false exact value.",
+    "For existing systems, condition/age can materially change C.",
+    "For final design, the engineer may override C and the report must record the override and reason."
+  ],
+  "sources": {
+    "ASHRAE_F25_CH22": {
+      "title": "ASHRAE Handbook\u2014Fundamentals, Chapter 22: Pipe and Tube Design",
+      "organization": "ASHRAE",
+      "year": 2025,
+      "url": "https://handbook.ashrae.org/Handbooks/F25/SI/F25_Ch22/F25_Ch22_si.aspx",
+      "status": "PRIMARY_ENGINEERING_REFERENCE",
+      "use": "General Hazen-Williams guidance and typical C values"
+    },
+    "DIPRA_C_VALUE": {
+      "title": "Ductile Iron Pipe Research Association \u2014 Engineering FAQ: Hazen-Williams C for cement-mortar-lined ductile iron",
+      "organization": "DIPRA",
+      "year": 2025,
+      "url": "https://dipra.org/technical-resources/faq/",
+      "status": "MANUFACTURER_INDUSTRY_ENGINEERING_REFERENCE",
+      "use": "C=140 recommendation for cement-mortar-lined cast/ductile iron"
+    },
+    "ENGINEERING_TOOLBOX_HW": {
+      "title": "Hazen-Williams Friction Loss Coefficients: Data & Reference Guide",
+      "organization": "Engineering ToolBox",
+      "url": "https://www.engineeringtoolbox.com/hazen-williams-coefficients-d_798.html",
+      "status": "SECONDARY_ENGINEERING_REFERENCE",
+      "use": "Broader material/condition ranges; use as secondary corroboration, not as sole governing criterion"
+    }
+  },
+  "records": [
+    {
+      "material": "ABS",
+      "condition": "typical",
+      "c_min": 130,
+      "c_max": 130,
+      "preferred": 130,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Aluminum",
+      "condition": "typical",
+      "c_min": 130,
+      "c_max": 150,
+      "preferred": null,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Asbestos cement",
+      "condition": "typical",
+      "c_min": 140,
+      "c_max": 140,
+      "preferred": 140,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Asphalt-lined pipe",
+      "condition": "typical",
+      "c_min": 130,
+      "c_max": 140,
+      "preferred": null,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Brass",
+      "condition": "typical",
+      "c_min": 130,
+      "c_max": 140,
+      "preferred": null,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Brick sewer",
+      "condition": "typical",
+      "c_min": 90,
+      "c_max": 100,
+      "preferred": null,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Cast iron",
+      "condition": "new, unlined",
+      "c_min": 130,
+      "c_max": 130,
+      "preferred": 130,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Cast iron",
+      "condition": "10 years old",
+      "c_min": 107,
+      "c_max": 113,
+      "preferred": 110,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Cast iron",
+      "condition": "20 years old",
+      "c_min": 89,
+      "c_max": 100,
+      "preferred": null,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Cast iron",
+      "condition": "30 years old",
+      "c_min": 75,
+      "c_max": 90,
+      "preferred": null,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Cast iron",
+      "condition": "40 years old",
+      "c_min": 64,
+      "c_max": 83,
+      "preferred": null,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Cast iron",
+      "condition": "asphalt coated",
+      "c_min": 100,
+      "c_max": 100,
+      "preferred": 100,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Cast iron",
+      "condition": "cement lined",
+      "c_min": 140,
+      "c_max": 140,
+      "preferred": 140,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Cast iron",
+      "condition": "bituminous lined",
+      "c_min": 140,
+      "c_max": 140,
+      "preferred": 140,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Cast iron",
+      "condition": "sea coated",
+      "c_min": 120,
+      "c_max": 120,
+      "preferred": 120,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Cement lining",
+      "condition": "typical",
+      "c_min": 130,
+      "c_max": 140,
+      "preferred": null,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Concrete",
+      "condition": "typical",
+      "c_min": 100,
+      "c_max": 140,
+      "preferred": null,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Concrete",
+      "condition": "old",
+      "c_min": 100,
+      "c_max": 110,
+      "preferred": null,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Concrete",
+      "condition": "lined, steel forms",
+      "c_min": 140,
+      "c_max": 140,
+      "preferred": 140,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Concrete",
+      "condition": "lined, wooden forms",
+      "c_min": 120,
+      "c_max": 120,
+      "preferred": 120,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Copper",
+      "condition": "typical",
+      "c_min": 130,
+      "c_max": 140,
+      "preferred": null,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Corrugated metal",
+      "condition": "typical",
+      "c_min": 60,
+      "c_max": 60,
+      "preferred": 60,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Ductile iron",
+      "condition": "cement-mortar lined",
+      "c_min": 140,
+      "c_max": 140,
+      "preferred": 140,
+      "unit": "dimensionless",
+      "source": "DIPRA_C_VALUE",
+      "status": "PRIMARY_INDUSTRY_REFERENCE"
+    },
+    {
+      "material": "Ductile iron",
+      "condition": "typical secondary table",
+      "c_min": 140,
+      "c_max": 140,
+      "preferred": 140,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Fiber cement",
+      "condition": "typical",
+      "c_min": 140,
+      "c_max": 140,
+      "preferred": 140,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Fiberglass / FRP",
+      "condition": "typical",
+      "c_min": 150,
+      "c_max": 150,
+      "preferred": 150,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Galvanized iron",
+      "condition": "typical",
+      "c_min": 120,
+      "c_max": 120,
+      "preferred": 120,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Glass",
+      "condition": "typical",
+      "c_min": 130,
+      "c_max": 130,
+      "preferred": 130,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Lead",
+      "condition": "typical",
+      "c_min": 130,
+      "c_max": 140,
+      "preferred": null,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "PE / polyethylene",
+      "condition": "typical",
+      "c_min": 140,
+      "c_max": 140,
+      "preferred": 140,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "PVC / CPVC",
+      "condition": "typical",
+      "c_min": 150,
+      "c_max": 150,
+      "preferred": 150,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Plastic",
+      "condition": "general typical",
+      "c_min": 130,
+      "c_max": 150,
+      "preferred": 150,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Steel",
+      "condition": "new, unlined",
+      "c_min": 140,
+      "c_max": 150,
+      "preferred": 140,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Steel",
+      "condition": "badly corroded / very rough",
+      "c_min": 100,
+      "c_max": 100,
+      "preferred": 100,
+      "unit": "dimensionless",
+      "source": "ASHRAE_F25_CH22",
+      "status": "PRIMARY_GENERAL_REFERENCE",
+      "notes": [
+        "ASHRAE states values can be 100 and below for badly corroded or very rough pipe. This is not a hard lower limit."
+      ]
+    },
+    {
+      "material": "Steel",
+      "condition": "very rough / badly corroded",
+      "c_min": 60,
+      "c_max": 100,
+      "preferred": null,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Steel",
+      "condition": "corrugated",
+      "c_min": 60,
+      "c_max": 60,
+      "preferred": 60,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Steel",
+      "condition": "riveted, no projecting rivets",
+      "c_min": 110,
+      "c_max": 110,
+      "preferred": 110,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Steel",
+      "condition": "projecting girth/horizontal rivets",
+      "c_min": 100,
+      "c_max": 100,
+      "preferred": 100,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Steel",
+      "condition": "vitrified spiral-riveted",
+      "c_min": 90,
+      "c_max": 110,
+      "preferred": null,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Vitrified clay",
+      "condition": "typical",
+      "c_min": 110,
+      "c_max": 110,
+      "preferred": 110,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Wrought iron",
+      "condition": "plain",
+      "c_min": 100,
+      "c_max": 100,
+      "preferred": 100,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Wood / masonry pipe",
+      "condition": "smooth",
+      "c_min": 120,
+      "c_max": 120,
+      "preferred": 120,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Wood stave",
+      "condition": "typical",
+      "c_min": 110,
+      "c_max": 120,
+      "preferred": null,
+      "unit": "dimensionless",
+      "source": "ENGINEERING_TOOLBOX_HW",
+      "status": "SECONDARY"
+    },
+    {
+      "material": "Plastic pipe",
+      "condition": "typical",
+      "c_min": 150,
+      "c_max": 150,
+      "preferred": 150,
+      "unit": "dimensionless",
+      "source": "ASHRAE_F25_CH22",
+      "status": "PRIMARY_GENERAL_REFERENCE"
+    },
+    {
+      "material": "Copper tubing",
+      "condition": "typical",
+      "c_min": 150,
+      "c_max": 150,
+      "preferred": 150,
+      "unit": "dimensionless",
+      "source": "ASHRAE_F25_CH22",
+      "status": "PRIMARY_GENERAL_REFERENCE"
+    },
+    {
+      "material": "Steel pipe",
+      "condition": "new",
+      "c_min": 140,
+      "c_max": 140,
+      "preferred": 140,
+      "unit": "dimensionless",
+      "source": "ASHRAE_F25_CH22",
+      "status": "PRIMARY_GENERAL_REFERENCE"
+    }
+  ]
+}

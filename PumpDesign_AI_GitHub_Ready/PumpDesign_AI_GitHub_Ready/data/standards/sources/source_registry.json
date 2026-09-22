@@ -1,0 +1,113 @@
+[
+  {
+    "source_id": "BCP-2021",
+    "title": "Building Code of Pakistan 2021",
+    "organization": "Pakistan Engineering Council",
+    "year": 2021,
+    "jurisdiction": "Pakistan",
+    "authority_level": "governing_national_code",
+    "access_type": "official_public_pdf",
+    "url": "https://www.pec.org.pk/wp-content/uploads/2025/01/BCP-2021.pdf",
+    "relevance": [
+      "plumbing",
+      "water_supply",
+      "jurisdiction",
+      "referenced_codes",
+      "AHJ"
+    ],
+    "notes": "BCP 2021 states that referenced codes form part of its requirements to the prescribed extent. Its plumbing provision states that IPC applies unless not required by the AHJ."
+  },
+  {
+    "source_id": "IPC-2021-CH6",
+    "title": "2021 International Plumbing Code \u2014 Chapter 6 Water Supply and Distribution",
+    "organization": "International Code Council",
+    "year": 2021,
+    "jurisdiction": "International fallback / where adopted",
+    "authority_level": "model_code",
+    "access_type": "official_public_web",
+    "url": "https://codes.iccsafe.org/content/IPC2021P1/chapter-6-water-supply-and-distribution",
+    "relevance": [
+      "water_supply",
+      "water_distribution",
+      "hot_water",
+      "materials",
+      "installation",
+      "pressure"
+    ],
+    "notes": "Chapter 6 governs design and installation of hot and cold water supply systems and individual water-supply systems; it includes water-supply, design, material, installation, hot-water, potable protection and temperature-control provisions."
+  },
+  {
+    "source_id": "IPC-2021-APPE",
+    "title": "2021 International Plumbing Code \u2014 Appendix E Sizing of Water Piping System",
+    "organization": "International Code Council",
+    "year": 2021,
+    "jurisdiction": "International fallback / only where adopted or otherwise applicable",
+    "authority_level": "model_code_appendix",
+    "access_type": "official_public_web",
+    "url": "https://codes.iccsafe.org/content/IPC2021P1/appendix-e-sizing-of-water-piping-system",
+    "relevance": [
+      "pipe_sizing",
+      "fixture_units",
+      "available_pressure",
+      "elevation",
+      "friction_loss"
+    ],
+    "notes": "Appendix E states that it is not mandatory unless specifically referenced in the adopting ordinance. It provides water-piping sizing procedures based on available static pressure, elevation/head changes, friction and fixture flow requirements."
+  },
+  {
+    "source_id": "ASHRAE-F25-CH3",
+    "title": "ASHRAE Handbook\u2014Fundamentals 2025, Chapter 3 Fluid Flow",
+    "organization": "ASHRAE",
+    "year": 2025,
+    "jurisdiction": "Engineering reference",
+    "authority_level": "recognized_engineering_reference",
+    "access_type": "official_public_web",
+    "url": "https://handbook.ashrae.org/Handbooks/F25/IP/f25_ch03/f25_ch03_ip.aspx",
+    "relevance": [
+      "fluid_flow",
+      "continuity",
+      "pressure",
+      "hydraulics"
+    ],
+    "notes": "Engineering reference for fluid-flow fundamentals used by the hydraulic calculation layer."
+  },
+  {
+    "source_id": "ASHRAE-F25-CH22",
+    "title": "ASHRAE Handbook\u2014Fundamentals 2025, Chapter 22 Pipe and Tube Design",
+    "organization": "ASHRAE",
+    "year": 2025,
+    "jurisdiction": "Engineering reference",
+    "authority_level": "recognized_engineering_reference",
+    "access_type": "official_public_web",
+    "url": "https://handbook.ashrae.org/Handbooks/F25/IP/F25_Ch22/F25_Ch22_ip.aspx",
+    "relevance": [
+      "pipe_sizing",
+      "service_water",
+      "hydraulic_losses",
+      "Hazen_Williams",
+      "Darcy_Weisbach",
+      "materials",
+      "water_hammer"
+    ],
+    "notes": "Provides a pipe-system sizing workflow, discusses service-water diversity, pipe materials and hydraulic losses, and notes Darcy-Weisbach as an alternative to pressure-drop charts. It cautions about extending Hazen-Williams C values outside their original conditions."
+  },
+  {
+    "source_id": "ASHRAE-A23-CH51",
+    "title": "ASHRAE Handbook\u2014HVAC Applications 2023, Chapter 51 Service Water Heating",
+    "organization": "ASHRAE",
+    "year": 2023,
+    "jurisdiction": "Engineering reference",
+    "authority_level": "recognized_engineering_reference",
+    "access_type": "official_public_web",
+    "url": "https://handbook.ashrae.org/Handbooks/A23/IP/A23_Ch51/a23_ch51_ip.aspx",
+    "relevance": [
+      "hot_water",
+      "recirculation",
+      "heat_loss",
+      "return_piping",
+      "temperature",
+      "pump_sizing"
+    ],
+    "notes": "Relevant to hot-water recirculation: system planning, flow/temperature requirements, hot-water pipe sizing, pressure differential, heat-loss/recirculation concepts and controls. The chapter warns that some demand data may be outdated and should be treated appropriately."
+  }
+]

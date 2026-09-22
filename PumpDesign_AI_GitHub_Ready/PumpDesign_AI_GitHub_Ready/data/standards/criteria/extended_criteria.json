@@ -1,0 +1,327 @@
+[
+  {
+    "criterion_id": "BCP-PLUMB-001",
+    "source_id": "BCP-2021",
+    "name": "Building plumbing governing code",
+    "value": "IPC-21 unless AHJ does not require it",
+    "unit": null,
+    "scope": "building plumbing",
+    "application": "all",
+    "status": "primary",
+    "reference": "BCP §101.4.3"
+  },
+  {
+    "criterion_id": "BCP-PLUMB-002",
+    "source_id": "BCP-2021",
+    "name": "Referenced code treatment",
+    "value": "Referenced codes/standards apply to prescribed extent",
+    "unit": null,
+    "scope": "standards hierarchy",
+    "application": "all",
+    "status": "primary",
+    "reference": "BCP §102.4"
+  },
+  {
+    "criterion_id": "BCP-PLUMB-003",
+    "source_id": "BCP-2021",
+    "name": "Apartment fixture basis",
+    "value": "1 WC + 1 lavatory + 1 bath/shower per dwelling unit; kitchen sink per dwelling unit; clothes-washer connection 1 per 20 units",
+    "unit": null,
+    "scope": "fixture count",
+    "application": "apartment house",
+    "status": "primary",
+    "reference": "BCP Table 2902.1"
+  },
+  {
+    "criterion_id": "IPC-WTR-001",
+    "source_id": "IPC-2021",
+    "name": "Peak fixture outlet pressure",
+    "value": "Fixture-specific; e.g. 8 psi for private lavatory/shower/residential sink and 20 psi for close-coupled tank WC",
+    "unit": "psi",
+    "scope": "building distribution",
+    "application": "booster/critical fixture",
+    "status": "primary",
+    "reference": "IPC Table 604.3"
+  },
+  {
+    "criterion_id": "IPC-WTR-002",
+    "source_id": "IPC-2021",
+    "name": "Peak fixture outlet flow",
+    "value": "Fixture-specific; e.g. private lavatory 0.8 gpm, shower 2.5 gpm, residential sink 1.75 gpm, close-coupled tank WC 3 gpm",
+    "unit": "gpm",
+    "scope": "building distribution",
+    "application": "booster/fixture supply",
+    "status": "primary",
+    "reference": "IPC Table 604.3"
+  },
+  {
+    "criterion_id": "IPC-WTR-003",
+    "source_id": "IPC-2021",
+    "name": "Booster trigger",
+    "value": "Install booster where source pressure is insufficient for required fixture outlet flow pressure",
+    "unit": null,
+    "scope": "building distribution",
+    "application": "booster",
+    "status": "primary",
+    "reference": "IPC §604.7"
+  },
+  {
+    "criterion_id": "IPC-WTR-004",
+    "source_id": "IPC-2021",
+    "name": "Minimum credible source pressure",
+    "value": "Use minimum available pressure where source pressure fluctuates",
+    "unit": null,
+    "scope": "building distribution",
+    "application": "booster",
+    "status": "primary",
+    "reference": "IPC §604.6"
+  },
+  {
+    "criterion_id": "IPC-WTR-005",
+    "source_id": "IPC-2021",
+    "name": "Pipe sizing method",
+    "value": "Accepted engineering method approved by code official/AHJ; Appendix E provides procedures based on pressure, elevation, friction and fixture flow",
+    "unit": null,
+    "scope": "building distribution",
+    "application": "booster",
+    "status": "primary",
+    "reference": "IPC §604.1; Appendix E"
+  },
+  {
+    "criterion_id": "IPC-HW-001",
+    "source_id": "IPC-2021",
+    "name": "Hot/tempered water developed length",
+    "value": "50",
+    "unit": "ft",
+    "scope": "hot water distribution",
+    "application": "recirculation",
+    "status": "primary",
+    "reference": "IPC §607.2"
+  },
+  {
+    "criterion_id": "PHED-WTR-001",
+    "source_id": "PHED-PUNJAB-2023",
+    "name": "Distribution-main velocity",
+    "value": [
+      0.3,
+      1.83
+    ],
+    "unit": "m/s",
+    "scope": "public water-supply mains",
+    "application": "distribution main",
+    "status": "provisional_public_copy",
+    "reference": "Punjab 2023 §2.6"
+  },
+  {
+    "criterion_id": "PHED-WTR-002",
+    "source_id": "PHED-PUNJAB-2023",
+    "name": "Rising-main velocity",
+    "value": [
+      0.9,
+      1.83
+    ],
+    "unit": "m/s",
+    "scope": "public water-supply rising mains",
+    "application": "rising main",
+    "status": "provisional_public_copy",
+    "reference": "Punjab 2023 §2.6"
+  },
+  {
+    "criterion_id": "PHED-WTR-003",
+    "source_id": "PHED-WTR-003",
+    "name": "Maximum-day factor",
+    "value": 1.5,
+    "unit": "× average day demand",
+    "scope": "public water-supply network",
+    "application": "maximum day",
+    "status": "provisional_public_copy",
+    "reference": "Punjab 2023 §2.4"
+  },
+  {
+    "criterion_id": "PHED-WTR-004",
+    "source_id": "PHED-PUNJAB-2023",
+    "name": "Peak-hour factor",
+    "value": 2.25,
+    "unit": "× average day demand",
+    "scope": "public water-supply network",
+    "application": "peak hour",
+    "status": "provisional_public_copy",
+    "reference": "Punjab 2023 §2.4"
+  },
+  {
+    "criterion_id": "PHED-WTR-005",
+    "source_id": "PHED-PUNJAB-2023",
+    "name": "Urban terminal pressure",
+    "value": 12,
+    "unit": "m",
+    "scope": "public water-supply network",
+    "application": "terminal pressure",
+    "status": "provisional_public_copy",
+    "reference": "Punjab 2023 §2.5"
+  },
+  {
+    "criterion_id": "PHED-WTR-006",
+    "source_id": "PHED-PUNJAB-2023",
+    "name": "Rural terminal pressure",
+    "value": 8,
+    "unit": "m",
+    "scope": "public water-supply network",
+    "application": "terminal pressure",
+    "status": "provisional_public_copy",
+    "reference": "Punjab 2023 §2.5"
+  },
+  {
+    "criterion_id": "PHED-WTR-007",
+    "source_id": "PHED-PUNJAB-2023",
+    "name": "OHR storage",
+    "value": 0.1,
+    "unit": "× average day demand",
+    "scope": "public water-supply storage",
+    "application": "OHR",
+    "status": "provisional_public_copy",
+    "reference": "Punjab 2023 §2.11"
+  },
+  {
+    "criterion_id": "PHED-WTR-008",
+    "source_id": "PHED-PUNJAB-2023",
+    "name": "Ground storage",
+    "value": 0.25,
+    "unit": "× average day demand",
+    "scope": "public water-supply storage",
+    "application": "ground storage",
+    "status": "provisional_public_copy",
+    "reference": "Punjab 2023 §2.12"
+  },
+  {
+    "criterion_id": "PHED-WTR-009",
+    "source_id": "PHED-PUNJAB-2023",
+    "name": "Hazen-Williams C: uPVC/HDPE",
+    "value": 130,
+    "unit": "C",
+    "scope": "public water-supply hydraulics",
+    "application": "friction loss",
+    "status": "provisional_public_copy",
+    "reference": "Punjab 2023 §4.5"
+  },
+  {
+    "criterion_id": "PHED-WTR-010",
+    "source_id": "PHED-PUNJAB-2023",
+    "name": "Hazen-Williams C: DI/MS",
+    "value": 110,
+    "unit": "C",
+    "scope": "public water-supply hydraulics",
+    "application": "friction loss",
+    "status": "provisional_public_copy",
+    "reference": "Punjab 2023 §4.5"
+  },
+  {
+    "criterion_id": "PHED-WTR-011",
+    "source_id": "PHED-PUNJAB-2023",
+    "name": "Tubewell design demand basis",
+    "value": "Maximum-day demand",
+    "unit": null,
+    "scope": "public water-supply source",
+    "application": "submersible/tubewell",
+    "status": "provisional_public_copy",
+    "reference": "Punjab 2023 §3.1"
+  },
+  {
+    "criterion_id": "PHED-WTR-012",
+    "source_id": "PHED-PUNJAB-2023",
+    "name": "Tubewell screen entrance velocity",
+    "value": 0.05,
+    "unit": "ft/s",
+    "scope": "tubewell screen",
+    "application": "submersible/tubewell",
+    "status": "provisional_public_copy",
+    "reference": "Punjab 2023 §3.1"
+  },
+  {
+    "criterion_id": "IPC-BOOST-001",
+    "source_id": "IPC-2021",
+    "name": "Booster system trigger",
+    "value": "Required when source pressure is insufficient to provide code-required fixture pressures and quantities",
+    "unit": null,
+    "scope": "building water distribution",
+    "application": "booster",
+    "status": "primary",
+    "reference": "IPC §§604.7, 606.5.1"
+  },
+  {
+    "criterion_id": "IPC-BOOST-002",
+    "source_id": "IPC-2021",
+    "name": "Booster low-pressure cutoff threshold",
+    "value": 10,
+    "unit": "psi positive suction pressure threshold",
+    "scope": "booster pump suction protection",
+    "application": "booster",
+    "status": "primary",
+    "reference": "IPC §606.5.5"
+  },
+  {
+    "criterion_id": "IPC-BOOST-003",
+    "source_id": "IPC-2021",
+    "name": "Maximum building static pressure before PRV",
+    "value": 80,
+    "unit": "psi",
+    "scope": "building water distribution",
+    "application": "booster",
+    "status": "primary",
+    "reference": "IPC §604.8"
+  },
+  {
+    "criterion_id": "IPC-BOOST-004",
+    "source_id": "IPC-2021",
+    "name": "Booster terminal pressure basis",
+    "value": "Use the hydraulically critical fixture/outlet pressure requirement from IPC Table 604.3 or the manufacturer requirement for unlisted fixtures",
+    "unit": "psi",
+    "scope": "building water distribution",
+    "application": "booster",
+    "status": "primary",
+    "reference": "IPC §604.3"
+  },
+  {
+    "criterion_id": "IPC-RECIRC-001",
+    "source_id": "IPC-2021",
+    "name": "Hot-water developed length without treating recirculation as source",
+    "value": 50,
+    "unit": "ft",
+    "scope": "hot-water distribution",
+    "application": "recirculation",
+    "status": "primary",
+    "reference": "IPC §607.2"
+  },
+  {
+    "criterion_id": "IPC-RECIRC-002",
+    "source_id": "IPC-2021",
+    "name": "Demand recirculation cold-water entry temperature limit",
+    "value": 40,
+    "unit": "°C",
+    "scope": "hot-water recirculation",
+    "application": "demand recirculation",
+    "status": "primary",
+    "reference": "IPC §607.2.1.2"
+  },
+  {
+    "criterion_id": "ASHRAE-RECIRC-001",
+    "source_id": "ASHRAE-A23-CH51",
+    "name": "Recirculation flow sizing basis",
+    "value": "Qp = q/(rho cp Δt), where q is total piping heat loss and Δt is allowable temperature drop",
+    "unit": "L/s or equivalent SI",
+    "scope": "hot-water recirculation",
+    "application": "pump flow",
+    "status": "recognized_engineering_reference",
+    "reference": "ASHRAE 2023 HVAC Applications Ch. 51"
+  },
+  {
+    "criterion_id": "ASHRAE-RECIRC-002",
+    "source_id": "ASHRAE-A23-CH51",
+    "name": "Recirculation pump head basis",
+    "value": "Calculate loop hydraulic resistance from actual supply/return circuit; select pump for required circulation flow and required loop head from pump curve",
+    "unit": null,
+    "scope": "hot-water recirculation",
+    "application": "pump duty",
+    "status": "recognized_engineering_reference",
+    "reference": "ASHRAE 2023 HVAC Applications Ch. 51"
+  }
+]

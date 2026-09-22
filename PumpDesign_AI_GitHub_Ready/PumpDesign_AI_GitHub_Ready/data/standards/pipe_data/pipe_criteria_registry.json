@@ -1,0 +1,3437 @@
+{
+  "registry_name": "PumpDesign AI Pipe Criteria Registry",
+  "registry_version": "1.0",
+  "source_registry": {
+    "ASHRAE_F25_CH22": {
+      "title": "ASHRAE Handbook\u2014Fundamentals, Chapter 22: Pipe and Tube Design",
+      "organization": "ASHRAE",
+      "edition_year": 2025,
+      "url": "https://handbook.ashrae.org/Handbooks/F25/SI/F25_Ch22/F25_Ch22_si.aspx",
+      "status": "PRIMARY_ENGINEERING_REFERENCE"
+    },
+    "ASME_B36_10_2022": {
+      "title": "ASME B36.10 \u2014 Welded and Seamless Wrought Steel Pipe",
+      "organization": "ASME",
+      "edition_year": 2022,
+      "url": "https://www.asme.org/codes-standards/find-codes-standards/welded-and-seamless-wrought-steel-pipe",
+      "status": "DIMENSIONAL_STANDARD"
+    },
+    "ASTM_D1785": {
+      "title": "ASTM D1785 \u2014 PVC Plastic Pipe, Schedules 40, 80, and 120",
+      "organization": "ASTM International",
+      "edition_year": 2026,
+      "url": "https://store.astm.org/d1785-26.html",
+      "status": "DIMENSIONAL_STANDARD"
+    },
+    "ISO_4427_2_2019": {
+      "title": "ISO 4427-2:2019 \u2014 Polyethylene (PE) pipes",
+      "organization": "ISO",
+      "edition_year": 2019,
+      "url": "https://www.iso.org/standard/72184.html",
+      "status": "DIMENSIONAL_STANDARD"
+    },
+    "ISO_15874_2_2013": {
+      "title": "ISO 15874-2:2013 \u2014 Polypropylene (PP) pipes for hot and cold water",
+      "organization": "ISO",
+      "edition_year": 2013,
+      "url": "https://www.iso.org/standard/54134.html",
+      "status": "DIMENSIONAL_STANDARD"
+    }
+  },
+  "hydraulic_defaults": {
+    "hazen_williams_C": {
+      "new_steel_typical": 140,
+      "plastic_typical": 150,
+      "source_id": "ASHRAE_F25_CH22"
+    },
+    "velocity_reference": [
+      {
+        "service": "general_water_service",
+        "min_m_s": 1.2,
+        "max_m_s": 3.0,
+        "min_ft_s": 3.937,
+        "max_ft_s": 9.843
+      },
+      {
+        "service": "city_water",
+        "min_m_s": 0.9,
+        "max_m_s": 2.1,
+        "min_ft_s": 2.953,
+        "max_ft_s": 6.89
+      },
+      {
+        "service": "pump_discharge",
+        "min_m_s": 2.4,
+        "max_m_s": 5.3,
+        "min_ft_s": 7.874,
+        "max_ft_s": 17.388
+      },
+      {
+        "service": "pump_suction",
+        "min_m_s": 1.2,
+        "max_m_s": 2.1,
+        "min_ft_s": 3.937,
+        "max_ft_s": 6.89
+      },
+      {
+        "service": "plastic_building_service_typical_max",
+        "min_m_s": null,
+        "max_m_s": 1.5,
+        "min_ft_s": null,
+        "max_ft_s": 4.921
+      }
+    ],
+    "source_id": "ASHRAE_F25_CH22",
+    "selection_note": "Velocity criteria are service/application dependent and must not be applied as one universal limit."
+  },
+  "pipe_families": [
+    {
+      "material": "MS/carbon steel",
+      "dimension_standard": "ASME B36.10",
+      "size_system": "NPS + schedule",
+      "default_hazen_williams_C": 140,
+      "source_id": "ASME_B36_10_2022"
+    },
+    {
+      "material": "PVC-U",
+      "dimension_standard": "ASTM D1785",
+      "size_system": "NPS + schedule",
+      "default_hazen_williams_C": 150,
+      "source_id": "ASTM_D1785"
+    },
+    {
+      "material": "HDPE/PE100",
+      "dimension_standard": "ISO 4427-2:2019",
+      "size_system": "DN/OD + SDR",
+      "default_hazen_williams_C": 150,
+      "source_id": "ISO_4427_2_2019"
+    },
+    {
+      "material": "PP-R/PPR",
+      "dimension_standard": "ISO 15874-2:2013",
+      "size_system": "DN/OD + pipe series S",
+      "default_hazen_williams_C": 150,
+      "source_id": "ISO_15874_2_2013"
+    }
+  ],
+  "records": [
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "1/2",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 21.336,
+          "wall_thickness_mm": 2.769,
+          "inside_diameter_mm": 15.798
+        },
+        "imperial": {
+          "outside_diameter_in": 0.84,
+          "wall_thickness_in": 0.109,
+          "inside_diameter_in": 0.622
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "1/2",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 21.336,
+          "wall_thickness_mm": 3.734,
+          "inside_diameter_mm": 13.868
+        },
+        "imperial": {
+          "outside_diameter_in": 0.84,
+          "wall_thickness_in": 0.147,
+          "inside_diameter_in": 0.546
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "3/4",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 26.67,
+          "wall_thickness_mm": 2.87,
+          "inside_diameter_mm": 20.93
+        },
+        "imperial": {
+          "outside_diameter_in": 1.05,
+          "wall_thickness_in": 0.113,
+          "inside_diameter_in": 0.824
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "3/4",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 26.67,
+          "wall_thickness_mm": 3.912,
+          "inside_diameter_mm": 18.846
+        },
+        "imperial": {
+          "outside_diameter_in": 1.05,
+          "wall_thickness_in": 0.154,
+          "inside_diameter_in": 0.742
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "1",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 33.401,
+          "wall_thickness_mm": 3.378,
+          "inside_diameter_mm": 26.645
+        },
+        "imperial": {
+          "outside_diameter_in": 1.315,
+          "wall_thickness_in": 0.133,
+          "inside_diameter_in": 1.049
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "1",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 33.401,
+          "wall_thickness_mm": 4.547,
+          "inside_diameter_mm": 24.307
+        },
+        "imperial": {
+          "outside_diameter_in": 1.315,
+          "wall_thickness_in": 0.179,
+          "inside_diameter_in": 0.957
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "1-1/4",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 42.164,
+          "wall_thickness_mm": 3.556,
+          "inside_diameter_mm": 35.052
+        },
+        "imperial": {
+          "outside_diameter_in": 1.66,
+          "wall_thickness_in": 0.14,
+          "inside_diameter_in": 1.38
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "1-1/4",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 42.164,
+          "wall_thickness_mm": 4.851,
+          "inside_diameter_mm": 32.462
+        },
+        "imperial": {
+          "outside_diameter_in": 1.66,
+          "wall_thickness_in": 0.191,
+          "inside_diameter_in": 1.278
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "1-1/2",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 48.26,
+          "wall_thickness_mm": 3.683,
+          "inside_diameter_mm": 40.894
+        },
+        "imperial": {
+          "outside_diameter_in": 1.9,
+          "wall_thickness_in": 0.145,
+          "inside_diameter_in": 1.61
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "1-1/2",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 48.26,
+          "wall_thickness_mm": 5.08,
+          "inside_diameter_mm": 38.1
+        },
+        "imperial": {
+          "outside_diameter_in": 1.9,
+          "wall_thickness_in": 0.2,
+          "inside_diameter_in": 1.5
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "2",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 60.325,
+          "wall_thickness_mm": 3.912,
+          "inside_diameter_mm": 52.501
+        },
+        "imperial": {
+          "outside_diameter_in": 2.375,
+          "wall_thickness_in": 0.154,
+          "inside_diameter_in": 2.067
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "2",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 60.325,
+          "wall_thickness_mm": 5.537,
+          "inside_diameter_mm": 49.251
+        },
+        "imperial": {
+          "outside_diameter_in": 2.375,
+          "wall_thickness_in": 0.218,
+          "inside_diameter_in": 1.939
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "2-1/2",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 73.025,
+          "wall_thickness_mm": 5.156,
+          "inside_diameter_mm": 62.713
+        },
+        "imperial": {
+          "outside_diameter_in": 2.875,
+          "wall_thickness_in": 0.203,
+          "inside_diameter_in": 2.469
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "2-1/2",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 73.025,
+          "wall_thickness_mm": 7.01,
+          "inside_diameter_mm": 59.005
+        },
+        "imperial": {
+          "outside_diameter_in": 2.875,
+          "wall_thickness_in": 0.276,
+          "inside_diameter_in": 2.323
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "3",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 88.9,
+          "wall_thickness_mm": 5.486,
+          "inside_diameter_mm": 77.928
+        },
+        "imperial": {
+          "outside_diameter_in": 3.5,
+          "wall_thickness_in": 0.216,
+          "inside_diameter_in": 3.068
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "3",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 88.9,
+          "wall_thickness_mm": 7.62,
+          "inside_diameter_mm": 73.66
+        },
+        "imperial": {
+          "outside_diameter_in": 3.5,
+          "wall_thickness_in": 0.3,
+          "inside_diameter_in": 2.9
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "3-1/2",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 101.6,
+          "wall_thickness_mm": 5.74,
+          "inside_diameter_mm": 90.12
+        },
+        "imperial": {
+          "outside_diameter_in": 4.0,
+          "wall_thickness_in": 0.226,
+          "inside_diameter_in": 3.548
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "3-1/2",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 101.6,
+          "wall_thickness_mm": 8.077,
+          "inside_diameter_mm": 85.446
+        },
+        "imperial": {
+          "outside_diameter_in": 4.0,
+          "wall_thickness_in": 0.318,
+          "inside_diameter_in": 3.364
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "4",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 114.3,
+          "wall_thickness_mm": 6.02,
+          "inside_diameter_mm": 102.26
+        },
+        "imperial": {
+          "outside_diameter_in": 4.5,
+          "wall_thickness_in": 0.237,
+          "inside_diameter_in": 4.026
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "4",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 114.3,
+          "wall_thickness_mm": 8.56,
+          "inside_diameter_mm": 97.18
+        },
+        "imperial": {
+          "outside_diameter_in": 4.5,
+          "wall_thickness_in": 0.337,
+          "inside_diameter_in": 3.826
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "5",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 141.3,
+          "wall_thickness_mm": 6.553,
+          "inside_diameter_mm": 128.194
+        },
+        "imperial": {
+          "outside_diameter_in": 5.563,
+          "wall_thickness_in": 0.258,
+          "inside_diameter_in": 5.047
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "5",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 141.3,
+          "wall_thickness_mm": 9.525,
+          "inside_diameter_mm": 122.25
+        },
+        "imperial": {
+          "outside_diameter_in": 5.563,
+          "wall_thickness_in": 0.375,
+          "inside_diameter_in": 4.813
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "6",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 168.275,
+          "wall_thickness_mm": 7.112,
+          "inside_diameter_mm": 154.051
+        },
+        "imperial": {
+          "outside_diameter_in": 6.625,
+          "wall_thickness_in": 0.28,
+          "inside_diameter_in": 6.065
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "6",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 168.275,
+          "wall_thickness_mm": 10.973,
+          "inside_diameter_mm": 146.329
+        },
+        "imperial": {
+          "outside_diameter_in": 6.625,
+          "wall_thickness_in": 0.432,
+          "inside_diameter_in": 5.761
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "8",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 219.075,
+          "wall_thickness_mm": 8.179,
+          "inside_diameter_mm": 202.717
+        },
+        "imperial": {
+          "outside_diameter_in": 8.625,
+          "wall_thickness_in": 0.322,
+          "inside_diameter_in": 7.981
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "8",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 219.075,
+          "wall_thickness_mm": 12.7,
+          "inside_diameter_mm": 193.675
+        },
+        "imperial": {
+          "outside_diameter_in": 8.625,
+          "wall_thickness_in": 0.5,
+          "inside_diameter_in": 7.625
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "10",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 273.05,
+          "wall_thickness_mm": 9.271,
+          "inside_diameter_mm": 254.508
+        },
+        "imperial": {
+          "outside_diameter_in": 10.75,
+          "wall_thickness_in": 0.365,
+          "inside_diameter_in": 10.02
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "10",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 273.05,
+          "wall_thickness_mm": 15.088,
+          "inside_diameter_mm": 242.874
+        },
+        "imperial": {
+          "outside_diameter_in": 10.75,
+          "wall_thickness_in": 0.594,
+          "inside_diameter_in": 9.562
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "12",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 323.85,
+          "wall_thickness_mm": 10.312,
+          "inside_diameter_mm": 303.226
+        },
+        "imperial": {
+          "outside_diameter_in": 12.75,
+          "wall_thickness_in": 0.406,
+          "inside_diameter_in": 11.938
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "12",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 323.85,
+          "wall_thickness_mm": 17.45,
+          "inside_diameter_mm": 288.95
+        },
+        "imperial": {
+          "outside_diameter_in": 12.75,
+          "wall_thickness_in": 0.687,
+          "inside_diameter_in": 11.376
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "14",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 355.6,
+          "wall_thickness_mm": 11.125,
+          "inside_diameter_mm": 333.35
+        },
+        "imperial": {
+          "outside_diameter_in": 14.0,
+          "wall_thickness_in": 0.438,
+          "inside_diameter_in": 13.124
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "14",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 355.6,
+          "wall_thickness_mm": 19.05,
+          "inside_diameter_mm": 317.5
+        },
+        "imperial": {
+          "outside_diameter_in": 14.0,
+          "wall_thickness_in": 0.75,
+          "inside_diameter_in": 12.5
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "16",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 406.4,
+          "wall_thickness_mm": 12.7,
+          "inside_diameter_mm": 381.0
+        },
+        "imperial": {
+          "outside_diameter_in": 16.0,
+          "wall_thickness_in": 0.5,
+          "inside_diameter_in": 15.0
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "16",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 406.4,
+          "wall_thickness_mm": 21.412,
+          "inside_diameter_mm": 363.576
+        },
+        "imperial": {
+          "outside_diameter_in": 16.0,
+          "wall_thickness_in": 0.843,
+          "inside_diameter_in": 14.314
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "18",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 457.2,
+          "wall_thickness_mm": 14.275,
+          "inside_diameter_mm": 428.65
+        },
+        "imperial": {
+          "outside_diameter_in": 18.0,
+          "wall_thickness_in": 0.562,
+          "inside_diameter_in": 16.876
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "18",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 457.2,
+          "wall_thickness_mm": 23.825,
+          "inside_diameter_mm": 409.55
+        },
+        "imperial": {
+          "outside_diameter_in": 18.0,
+          "wall_thickness_in": 0.938,
+          "inside_diameter_in": 16.124
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "20",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 508.0,
+          "wall_thickness_mm": 15.088,
+          "inside_diameter_mm": 477.824
+        },
+        "imperial": {
+          "outside_diameter_in": 20.0,
+          "wall_thickness_in": 0.594,
+          "inside_diameter_in": 18.812
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "20",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 508.0,
+          "wall_thickness_mm": 26.187,
+          "inside_diameter_mm": 455.626
+        },
+        "imperial": {
+          "outside_diameter_in": 20.0,
+          "wall_thickness_in": 1.031,
+          "inside_diameter_in": 17.938
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "22",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 558.8,
+          "wall_thickness_mm": 15.875,
+          "inside_diameter_mm": 527.05
+        },
+        "imperial": {
+          "outside_diameter_in": 22.0,
+          "wall_thickness_in": 0.625,
+          "inside_diameter_in": 20.75
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "22",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 558.8,
+          "wall_thickness_mm": 28.575,
+          "inside_diameter_mm": 501.65
+        },
+        "imperial": {
+          "outside_diameter_in": 22.0,
+          "wall_thickness_in": 1.125,
+          "inside_diameter_in": 19.75
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "24",
+      "standard": "ASME B36.10",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 609.6,
+          "wall_thickness_mm": 17.45,
+          "inside_diameter_mm": 574.7
+        },
+        "imperial": {
+          "outside_diameter_in": 24.0,
+          "wall_thickness_in": 0.687,
+          "inside_diameter_in": 22.626
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "MS/carbon steel",
+      "nominal_size": "24",
+      "standard": "ASME B36.10",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 609.6,
+          "wall_thickness_mm": 30.175,
+          "inside_diameter_mm": 549.25
+        },
+        "imperial": {
+          "outside_diameter_in": 24.0,
+          "wall_thickness_in": 1.188,
+          "inside_diameter_in": 21.624
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASME_B36_10_2022",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "1/2",
+      "standard": "ASTM D1785",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 21.336,
+          "wall_thickness_mm": 2.769,
+          "inside_diameter_mm": 15.798
+        },
+        "imperial": {
+          "outside_diameter_in": 0.84,
+          "wall_thickness_in": 0.109,
+          "inside_diameter_in": 0.622
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "1/2",
+      "standard": "ASTM D1785",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 21.336,
+          "wall_thickness_mm": 3.734,
+          "inside_diameter_mm": 13.868
+        },
+        "imperial": {
+          "outside_diameter_in": 0.84,
+          "wall_thickness_in": 0.147,
+          "inside_diameter_in": 0.546
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "3/4",
+      "standard": "ASTM D1785",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 26.67,
+          "wall_thickness_mm": 2.87,
+          "inside_diameter_mm": 20.93
+        },
+        "imperial": {
+          "outside_diameter_in": 1.05,
+          "wall_thickness_in": 0.113,
+          "inside_diameter_in": 0.824
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "3/4",
+      "standard": "ASTM D1785",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 26.67,
+          "wall_thickness_mm": 3.912,
+          "inside_diameter_mm": 18.846
+        },
+        "imperial": {
+          "outside_diameter_in": 1.05,
+          "wall_thickness_in": 0.154,
+          "inside_diameter_in": 0.742
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "1",
+      "standard": "ASTM D1785",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 33.401,
+          "wall_thickness_mm": 3.378,
+          "inside_diameter_mm": 26.645
+        },
+        "imperial": {
+          "outside_diameter_in": 1.315,
+          "wall_thickness_in": 0.133,
+          "inside_diameter_in": 1.049
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "1",
+      "standard": "ASTM D1785",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 33.401,
+          "wall_thickness_mm": 4.547,
+          "inside_diameter_mm": 24.307
+        },
+        "imperial": {
+          "outside_diameter_in": 1.315,
+          "wall_thickness_in": 0.179,
+          "inside_diameter_in": 0.957
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "1-1/4",
+      "standard": "ASTM D1785",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 42.164,
+          "wall_thickness_mm": 3.556,
+          "inside_diameter_mm": 35.052
+        },
+        "imperial": {
+          "outside_diameter_in": 1.66,
+          "wall_thickness_in": 0.14,
+          "inside_diameter_in": 1.38
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "1-1/4",
+      "standard": "ASTM D1785",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 42.164,
+          "wall_thickness_mm": 4.851,
+          "inside_diameter_mm": 32.462
+        },
+        "imperial": {
+          "outside_diameter_in": 1.66,
+          "wall_thickness_in": 0.191,
+          "inside_diameter_in": 1.278
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "1-1/2",
+      "standard": "ASTM D1785",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 48.26,
+          "wall_thickness_mm": 3.683,
+          "inside_diameter_mm": 40.894
+        },
+        "imperial": {
+          "outside_diameter_in": 1.9,
+          "wall_thickness_in": 0.145,
+          "inside_diameter_in": 1.61
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "1-1/2",
+      "standard": "ASTM D1785",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 48.26,
+          "wall_thickness_mm": 5.08,
+          "inside_diameter_mm": 38.1
+        },
+        "imperial": {
+          "outside_diameter_in": 1.9,
+          "wall_thickness_in": 0.2,
+          "inside_diameter_in": 1.5
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "2",
+      "standard": "ASTM D1785",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 60.325,
+          "wall_thickness_mm": 3.912,
+          "inside_diameter_mm": 52.501
+        },
+        "imperial": {
+          "outside_diameter_in": 2.375,
+          "wall_thickness_in": 0.154,
+          "inside_diameter_in": 2.067
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "2",
+      "standard": "ASTM D1785",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 60.325,
+          "wall_thickness_mm": 5.537,
+          "inside_diameter_mm": 49.251
+        },
+        "imperial": {
+          "outside_diameter_in": 2.375,
+          "wall_thickness_in": 0.218,
+          "inside_diameter_in": 1.939
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "2-1/2",
+      "standard": "ASTM D1785",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 73.025,
+          "wall_thickness_mm": 5.156,
+          "inside_diameter_mm": 62.713
+        },
+        "imperial": {
+          "outside_diameter_in": 2.875,
+          "wall_thickness_in": 0.203,
+          "inside_diameter_in": 2.469
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "2-1/2",
+      "standard": "ASTM D1785",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 73.025,
+          "wall_thickness_mm": 7.01,
+          "inside_diameter_mm": 59.005
+        },
+        "imperial": {
+          "outside_diameter_in": 2.875,
+          "wall_thickness_in": 0.276,
+          "inside_diameter_in": 2.323
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "3",
+      "standard": "ASTM D1785",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 88.9,
+          "wall_thickness_mm": 5.486,
+          "inside_diameter_mm": 77.928
+        },
+        "imperial": {
+          "outside_diameter_in": 3.5,
+          "wall_thickness_in": 0.216,
+          "inside_diameter_in": 3.068
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "3",
+      "standard": "ASTM D1785",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 88.9,
+          "wall_thickness_mm": 7.62,
+          "inside_diameter_mm": 73.66
+        },
+        "imperial": {
+          "outside_diameter_in": 3.5,
+          "wall_thickness_in": 0.3,
+          "inside_diameter_in": 2.9
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "4",
+      "standard": "ASTM D1785",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 114.3,
+          "wall_thickness_mm": 6.02,
+          "inside_diameter_mm": 102.26
+        },
+        "imperial": {
+          "outside_diameter_in": 4.5,
+          "wall_thickness_in": 0.237,
+          "inside_diameter_in": 4.026
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "4",
+      "standard": "ASTM D1785",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 114.3,
+          "wall_thickness_mm": 8.56,
+          "inside_diameter_mm": 97.18
+        },
+        "imperial": {
+          "outside_diameter_in": 4.5,
+          "wall_thickness_in": 0.337,
+          "inside_diameter_in": 3.826
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "5",
+      "standard": "ASTM D1785",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 141.3,
+          "wall_thickness_mm": 6.553,
+          "inside_diameter_mm": 128.194
+        },
+        "imperial": {
+          "outside_diameter_in": 5.563,
+          "wall_thickness_in": 0.258,
+          "inside_diameter_in": 5.047
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "5",
+      "standard": "ASTM D1785",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 141.3,
+          "wall_thickness_mm": 9.525,
+          "inside_diameter_mm": 122.25
+        },
+        "imperial": {
+          "outside_diameter_in": 5.563,
+          "wall_thickness_in": 0.375,
+          "inside_diameter_in": 4.813
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "6",
+      "standard": "ASTM D1785",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 168.275,
+          "wall_thickness_mm": 7.112,
+          "inside_diameter_mm": 154.051
+        },
+        "imperial": {
+          "outside_diameter_in": 6.625,
+          "wall_thickness_in": 0.28,
+          "inside_diameter_in": 6.065
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "6",
+      "standard": "ASTM D1785",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 168.275,
+          "wall_thickness_mm": 10.973,
+          "inside_diameter_mm": 146.329
+        },
+        "imperial": {
+          "outside_diameter_in": 6.625,
+          "wall_thickness_in": 0.432,
+          "inside_diameter_in": 5.761
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "8",
+      "standard": "ASTM D1785",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 219.075,
+          "wall_thickness_mm": 8.179,
+          "inside_diameter_mm": 202.717
+        },
+        "imperial": {
+          "outside_diameter_in": 8.625,
+          "wall_thickness_in": 0.322,
+          "inside_diameter_in": 7.981
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "8",
+      "standard": "ASTM D1785",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 219.075,
+          "wall_thickness_mm": 12.7,
+          "inside_diameter_mm": 193.675
+        },
+        "imperial": {
+          "outside_diameter_in": 8.625,
+          "wall_thickness_in": 0.5,
+          "inside_diameter_in": 7.625
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "10",
+      "standard": "ASTM D1785",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 273.05,
+          "wall_thickness_mm": 9.271,
+          "inside_diameter_mm": 254.508
+        },
+        "imperial": {
+          "outside_diameter_in": 10.75,
+          "wall_thickness_in": 0.365,
+          "inside_diameter_in": 10.02
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "10",
+      "standard": "ASTM D1785",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 273.05,
+          "wall_thickness_mm": 15.088,
+          "inside_diameter_mm": 242.874
+        },
+        "imperial": {
+          "outside_diameter_in": 10.75,
+          "wall_thickness_in": 0.594,
+          "inside_diameter_in": 9.562
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "12",
+      "standard": "ASTM D1785",
+      "series": "SCH 40",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 323.85,
+          "wall_thickness_mm": 10.312,
+          "inside_diameter_mm": 303.226
+        },
+        "imperial": {
+          "outside_diameter_in": 12.75,
+          "wall_thickness_in": 0.406,
+          "inside_diameter_in": 11.938
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "PVC-U",
+      "nominal_size": "12",
+      "standard": "ASTM D1785",
+      "series": "SCH 80",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 323.85,
+          "wall_thickness_mm": 17.475,
+          "inside_diameter_mm": 288.9
+        },
+        "imperial": {
+          "outside_diameter_in": 12.75,
+          "wall_thickness_in": 0.688,
+          "inside_diameter_in": 11.374
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ASTM_D1785",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 20",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 20,
+          "wall_thickness_mm": 2.3,
+          "inside_diameter_mm": 15.4
+        },
+        "imperial": {
+          "outside_diameter_in": 0.7874,
+          "wall_thickness_in": 0.0906,
+          "inside_diameter_in": 0.6063
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 25",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 25,
+          "wall_thickness_mm": 2.3,
+          "inside_diameter_mm": 20.4
+        },
+        "imperial": {
+          "outside_diameter_in": 0.9843,
+          "wall_thickness_in": 0.0906,
+          "inside_diameter_in": 0.8031
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 32",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 32,
+          "wall_thickness_mm": 3.0,
+          "inside_diameter_mm": 26.0
+        },
+        "imperial": {
+          "outside_diameter_in": 1.2598,
+          "wall_thickness_in": 0.1181,
+          "inside_diameter_in": 1.0236
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 32",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 32,
+          "wall_thickness_mm": 2.0,
+          "inside_diameter_mm": 28.0
+        },
+        "imperial": {
+          "outside_diameter_in": 1.2598,
+          "wall_thickness_in": 0.0787,
+          "inside_diameter_in": 1.1024
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 40",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 40,
+          "wall_thickness_mm": 3.7,
+          "inside_diameter_mm": 32.6
+        },
+        "imperial": {
+          "outside_diameter_in": 1.5748,
+          "wall_thickness_in": 0.1457,
+          "inside_diameter_in": 1.2835
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 40",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 40,
+          "wall_thickness_mm": 2.4,
+          "inside_diameter_mm": 35.2
+        },
+        "imperial": {
+          "outside_diameter_in": 1.5748,
+          "wall_thickness_in": 0.0945,
+          "inside_diameter_in": 1.3858
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 50",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 50,
+          "wall_thickness_mm": 4.6,
+          "inside_diameter_mm": 40.8
+        },
+        "imperial": {
+          "outside_diameter_in": 1.9685,
+          "wall_thickness_in": 0.1811,
+          "inside_diameter_in": 1.6063
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 50",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 50,
+          "wall_thickness_mm": 3.0,
+          "inside_diameter_mm": 44.0
+        },
+        "imperial": {
+          "outside_diameter_in": 1.9685,
+          "wall_thickness_in": 0.1181,
+          "inside_diameter_in": 1.7323
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 63",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 63,
+          "wall_thickness_mm": 5.8,
+          "inside_diameter_mm": 51.4
+        },
+        "imperial": {
+          "outside_diameter_in": 2.4803,
+          "wall_thickness_in": 0.2283,
+          "inside_diameter_in": 2.0236
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 63",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 63,
+          "wall_thickness_mm": 3.8,
+          "inside_diameter_mm": 55.4
+        },
+        "imperial": {
+          "outside_diameter_in": 2.4803,
+          "wall_thickness_in": 0.1496,
+          "inside_diameter_in": 2.1811
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 75",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 75,
+          "wall_thickness_mm": 6.8,
+          "inside_diameter_mm": 61.4
+        },
+        "imperial": {
+          "outside_diameter_in": 2.9528,
+          "wall_thickness_in": 0.2677,
+          "inside_diameter_in": 2.4173
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 75",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 75,
+          "wall_thickness_mm": 4.5,
+          "inside_diameter_mm": 66.0
+        },
+        "imperial": {
+          "outside_diameter_in": 2.9528,
+          "wall_thickness_in": 0.1772,
+          "inside_diameter_in": 2.5984
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 90",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 90,
+          "wall_thickness_mm": 8.2,
+          "inside_diameter_mm": 73.6
+        },
+        "imperial": {
+          "outside_diameter_in": 3.5433,
+          "wall_thickness_in": 0.3228,
+          "inside_diameter_in": 2.8976
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 90",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 90,
+          "wall_thickness_mm": 5.4,
+          "inside_diameter_mm": 79.2
+        },
+        "imperial": {
+          "outside_diameter_in": 3.5433,
+          "wall_thickness_in": 0.2126,
+          "inside_diameter_in": 3.1181
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 110",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 110,
+          "wall_thickness_mm": 10.0,
+          "inside_diameter_mm": 90.0
+        },
+        "imperial": {
+          "outside_diameter_in": 4.3307,
+          "wall_thickness_in": 0.3937,
+          "inside_diameter_in": 3.5433
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 110",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 110,
+          "wall_thickness_mm": 6.6,
+          "inside_diameter_mm": 96.8
+        },
+        "imperial": {
+          "outside_diameter_in": 4.3307,
+          "wall_thickness_in": 0.2598,
+          "inside_diameter_in": 3.811
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 125",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 125,
+          "wall_thickness_mm": 11.4,
+          "inside_diameter_mm": 102.2
+        },
+        "imperial": {
+          "outside_diameter_in": 4.9213,
+          "wall_thickness_in": 0.4488,
+          "inside_diameter_in": 4.0236
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 125",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 125,
+          "wall_thickness_mm": 7.4,
+          "inside_diameter_mm": 110.2
+        },
+        "imperial": {
+          "outside_diameter_in": 4.9213,
+          "wall_thickness_in": 0.2913,
+          "inside_diameter_in": 4.3386
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 140",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 140,
+          "wall_thickness_mm": 12.7,
+          "inside_diameter_mm": 114.6
+        },
+        "imperial": {
+          "outside_diameter_in": 5.5118,
+          "wall_thickness_in": 0.5,
+          "inside_diameter_in": 4.5118
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 140",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 140,
+          "wall_thickness_mm": 8.3,
+          "inside_diameter_mm": 123.4
+        },
+        "imperial": {
+          "outside_diameter_in": 5.5118,
+          "wall_thickness_in": 0.3268,
+          "inside_diameter_in": 4.8583
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 160",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 160,
+          "wall_thickness_mm": 14.6,
+          "inside_diameter_mm": 130.8
+        },
+        "imperial": {
+          "outside_diameter_in": 6.2992,
+          "wall_thickness_in": 0.5748,
+          "inside_diameter_in": 5.1496
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 160",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 160,
+          "wall_thickness_mm": 9.5,
+          "inside_diameter_mm": 141.0
+        },
+        "imperial": {
+          "outside_diameter_in": 6.2992,
+          "wall_thickness_in": 0.374,
+          "inside_diameter_in": 5.5512
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 180",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 180,
+          "wall_thickness_mm": 16.4,
+          "inside_diameter_mm": 147.2
+        },
+        "imperial": {
+          "outside_diameter_in": 7.0866,
+          "wall_thickness_in": 0.6457,
+          "inside_diameter_in": 5.7953
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 180",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 180,
+          "wall_thickness_mm": 10.7,
+          "inside_diameter_mm": 158.6
+        },
+        "imperial": {
+          "outside_diameter_in": 7.0866,
+          "wall_thickness_in": 0.4213,
+          "inside_diameter_in": 6.2441
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 200",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 200,
+          "wall_thickness_mm": 18.2,
+          "inside_diameter_mm": 163.6
+        },
+        "imperial": {
+          "outside_diameter_in": 7.874,
+          "wall_thickness_in": 0.7165,
+          "inside_diameter_in": 6.4409
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 200",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 200,
+          "wall_thickness_mm": 11.9,
+          "inside_diameter_mm": 176.2
+        },
+        "imperial": {
+          "outside_diameter_in": 7.874,
+          "wall_thickness_in": 0.4685,
+          "inside_diameter_in": 6.937
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 225",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 225,
+          "wall_thickness_mm": 20.5,
+          "inside_diameter_mm": 184.0
+        },
+        "imperial": {
+          "outside_diameter_in": 8.8583,
+          "wall_thickness_in": 0.8071,
+          "inside_diameter_in": 7.2441
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 225",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 225,
+          "wall_thickness_mm": 13.4,
+          "inside_diameter_mm": 198.2
+        },
+        "imperial": {
+          "outside_diameter_in": 8.8583,
+          "wall_thickness_in": 0.5276,
+          "inside_diameter_in": 7.8031
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 250",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 250,
+          "wall_thickness_mm": 22.7,
+          "inside_diameter_mm": 204.6
+        },
+        "imperial": {
+          "outside_diameter_in": 9.8425,
+          "wall_thickness_in": 0.8937,
+          "inside_diameter_in": 8.0551
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 250",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 250,
+          "wall_thickness_mm": 14.8,
+          "inside_diameter_mm": 220.4
+        },
+        "imperial": {
+          "outside_diameter_in": 9.8425,
+          "wall_thickness_in": 0.5827,
+          "inside_diameter_in": 8.6772
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 280",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 280,
+          "wall_thickness_mm": 25.4,
+          "inside_diameter_mm": 229.2
+        },
+        "imperial": {
+          "outside_diameter_in": 11.0236,
+          "wall_thickness_in": 1.0,
+          "inside_diameter_in": 9.0236
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 280",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 280,
+          "wall_thickness_mm": 16.6,
+          "inside_diameter_mm": 246.8
+        },
+        "imperial": {
+          "outside_diameter_in": 11.0236,
+          "wall_thickness_in": 0.6535,
+          "inside_diameter_in": 9.7165
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 315",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 315,
+          "wall_thickness_mm": 28.6,
+          "inside_diameter_mm": 257.8
+        },
+        "imperial": {
+          "outside_diameter_in": 12.4016,
+          "wall_thickness_in": 1.126,
+          "inside_diameter_in": 10.1496
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 315",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 315,
+          "wall_thickness_mm": 18.7,
+          "inside_diameter_mm": 277.6
+        },
+        "imperial": {
+          "outside_diameter_in": 12.4016,
+          "wall_thickness_in": 0.7362,
+          "inside_diameter_in": 10.9291
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 355",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 355,
+          "wall_thickness_mm": 32.2,
+          "inside_diameter_mm": 290.6
+        },
+        "imperial": {
+          "outside_diameter_in": 13.9764,
+          "wall_thickness_in": 1.2677,
+          "inside_diameter_in": 11.4409
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 355",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 355,
+          "wall_thickness_mm": 21.1,
+          "inside_diameter_mm": 312.8
+        },
+        "imperial": {
+          "outside_diameter_in": 13.9764,
+          "wall_thickness_in": 0.8307,
+          "inside_diameter_in": 12.315
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 400",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 11",
+      "pressure_class": "PN 16",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 400,
+          "wall_thickness_mm": 36.3,
+          "inside_diameter_mm": 327.4
+        },
+        "imperial": {
+          "outside_diameter_in": 15.748,
+          "wall_thickness_in": 1.4291,
+          "inside_diameter_in": 12.8898
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "HDPE/PE100",
+      "nominal_size": "DN/OD 400",
+      "standard": "ISO 4427-2:2019",
+      "series": "SDR 17",
+      "pressure_class": "PN 10",
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 400,
+          "wall_thickness_mm": 23.7,
+          "inside_diameter_mm": 352.6
+        },
+        "imperial": {
+          "outside_diameter_in": 15.748,
+          "wall_thickness_in": 0.9331,
+          "inside_diameter_in": 13.8819
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_4427_2_2019",
+      "notes": []
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 16",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 16,
+          "wall_thickness_mm": 1.8,
+          "inside_diameter_mm": 12.4
+        },
+        "imperial": {
+          "outside_diameter_in": 0.6299,
+          "wall_thickness_in": 0.0709,
+          "inside_diameter_in": 0.4882
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 16",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 3.2",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 16,
+          "wall_thickness_mm": 2.2,
+          "inside_diameter_mm": 11.6
+        },
+        "imperial": {
+          "outside_diameter_in": 0.6299,
+          "wall_thickness_in": 0.0866,
+          "inside_diameter_in": 0.4567
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 16",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 2.5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 16,
+          "wall_thickness_mm": 2.7,
+          "inside_diameter_mm": 10.6
+        },
+        "imperial": {
+          "outside_diameter_in": 0.6299,
+          "wall_thickness_in": 0.1063,
+          "inside_diameter_in": 0.4173
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 20",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 20,
+          "wall_thickness_mm": 1.9,
+          "inside_diameter_mm": 16.2
+        },
+        "imperial": {
+          "outside_diameter_in": 0.7874,
+          "wall_thickness_in": 0.0748,
+          "inside_diameter_in": 0.6378
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 20",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 3.2",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 20,
+          "wall_thickness_mm": 2.8,
+          "inside_diameter_mm": 14.4
+        },
+        "imperial": {
+          "outside_diameter_in": 0.7874,
+          "wall_thickness_in": 0.1102,
+          "inside_diameter_in": 0.5669
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 20",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 2.5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 20,
+          "wall_thickness_mm": 3.4,
+          "inside_diameter_mm": 13.2
+        },
+        "imperial": {
+          "outside_diameter_in": 0.7874,
+          "wall_thickness_in": 0.1339,
+          "inside_diameter_in": 0.5197
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 25",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 25,
+          "wall_thickness_mm": 2.3,
+          "inside_diameter_mm": 20.4
+        },
+        "imperial": {
+          "outside_diameter_in": 0.9843,
+          "wall_thickness_in": 0.0906,
+          "inside_diameter_in": 0.8031
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 25",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 3.2",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 25,
+          "wall_thickness_mm": 3.5,
+          "inside_diameter_mm": 18.0
+        },
+        "imperial": {
+          "outside_diameter_in": 0.9843,
+          "wall_thickness_in": 0.1378,
+          "inside_diameter_in": 0.7087
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 25",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 2.5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 25,
+          "wall_thickness_mm": 4.2,
+          "inside_diameter_mm": 16.6
+        },
+        "imperial": {
+          "outside_diameter_in": 0.9843,
+          "wall_thickness_in": 0.1654,
+          "inside_diameter_in": 0.6535
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 32",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 32,
+          "wall_thickness_mm": 2.9,
+          "inside_diameter_mm": 26.2
+        },
+        "imperial": {
+          "outside_diameter_in": 1.2598,
+          "wall_thickness_in": 0.1142,
+          "inside_diameter_in": 1.0315
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 32",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 3.2",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 32,
+          "wall_thickness_mm": 4.4,
+          "inside_diameter_mm": 23.2
+        },
+        "imperial": {
+          "outside_diameter_in": 1.2598,
+          "wall_thickness_in": 0.1732,
+          "inside_diameter_in": 0.9134
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 32",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 2.5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 32,
+          "wall_thickness_mm": 5.4,
+          "inside_diameter_mm": 21.2
+        },
+        "imperial": {
+          "outside_diameter_in": 1.2598,
+          "wall_thickness_in": 0.2126,
+          "inside_diameter_in": 0.8346
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 40",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 40,
+          "wall_thickness_mm": 3.7,
+          "inside_diameter_mm": 32.6
+        },
+        "imperial": {
+          "outside_diameter_in": 1.5748,
+          "wall_thickness_in": 0.1457,
+          "inside_diameter_in": 1.2835
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 40",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 3.2",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 40,
+          "wall_thickness_mm": 5.5,
+          "inside_diameter_mm": 29.0
+        },
+        "imperial": {
+          "outside_diameter_in": 1.5748,
+          "wall_thickness_in": 0.2165,
+          "inside_diameter_in": 1.1417
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 40",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 2.5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 40,
+          "wall_thickness_mm": 6.7,
+          "inside_diameter_mm": 26.6
+        },
+        "imperial": {
+          "outside_diameter_in": 1.5748,
+          "wall_thickness_in": 0.2638,
+          "inside_diameter_in": 1.0472
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 50",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 50,
+          "wall_thickness_mm": 4.6,
+          "inside_diameter_mm": 40.8
+        },
+        "imperial": {
+          "outside_diameter_in": 1.9685,
+          "wall_thickness_in": 0.1811,
+          "inside_diameter_in": 1.6063
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 50",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 3.2",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 50,
+          "wall_thickness_mm": 6.9,
+          "inside_diameter_mm": 36.2
+        },
+        "imperial": {
+          "outside_diameter_in": 1.9685,
+          "wall_thickness_in": 0.2717,
+          "inside_diameter_in": 1.4252
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 50",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 2.5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 50,
+          "wall_thickness_mm": 8.3,
+          "inside_diameter_mm": 33.4
+        },
+        "imperial": {
+          "outside_diameter_in": 1.9685,
+          "wall_thickness_in": 0.3268,
+          "inside_diameter_in": 1.315
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 63",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 63,
+          "wall_thickness_mm": 5.8,
+          "inside_diameter_mm": 51.4
+        },
+        "imperial": {
+          "outside_diameter_in": 2.4803,
+          "wall_thickness_in": 0.2283,
+          "inside_diameter_in": 2.0236
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 63",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 3.2",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 63,
+          "wall_thickness_mm": 8.6,
+          "inside_diameter_mm": 45.8
+        },
+        "imperial": {
+          "outside_diameter_in": 2.4803,
+          "wall_thickness_in": 0.3386,
+          "inside_diameter_in": 1.8031
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 63",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 2.5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 63,
+          "wall_thickness_mm": 10.5,
+          "inside_diameter_mm": 42.0
+        },
+        "imperial": {
+          "outside_diameter_in": 2.4803,
+          "wall_thickness_in": 0.4134,
+          "inside_diameter_in": 1.6535
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 75",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 75,
+          "wall_thickness_mm": 6.8,
+          "inside_diameter_mm": 61.4
+        },
+        "imperial": {
+          "outside_diameter_in": 2.9528,
+          "wall_thickness_in": 0.2677,
+          "inside_diameter_in": 2.4173
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 75",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 3.2",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 75,
+          "wall_thickness_mm": 10.3,
+          "inside_diameter_mm": 54.4
+        },
+        "imperial": {
+          "outside_diameter_in": 2.9528,
+          "wall_thickness_in": 0.4055,
+          "inside_diameter_in": 2.1417
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 75",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 2.5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 75,
+          "wall_thickness_mm": 12.5,
+          "inside_diameter_mm": 50.0
+        },
+        "imperial": {
+          "outside_diameter_in": 2.9528,
+          "wall_thickness_in": 0.4921,
+          "inside_diameter_in": 1.9685
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 90",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 90,
+          "wall_thickness_mm": 8.2,
+          "inside_diameter_mm": 73.6
+        },
+        "imperial": {
+          "outside_diameter_in": 3.5433,
+          "wall_thickness_in": 0.3228,
+          "inside_diameter_in": 2.8976
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 90",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 3.2",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 90,
+          "wall_thickness_mm": 12.3,
+          "inside_diameter_mm": 65.4
+        },
+        "imperial": {
+          "outside_diameter_in": 3.5433,
+          "wall_thickness_in": 0.4843,
+          "inside_diameter_in": 2.5748
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 90",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 2.5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 90,
+          "wall_thickness_mm": 15.0,
+          "inside_diameter_mm": 60.0
+        },
+        "imperial": {
+          "outside_diameter_in": 3.5433,
+          "wall_thickness_in": 0.5906,
+          "inside_diameter_in": 2.3622
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 110",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 110,
+          "wall_thickness_mm": 10.0,
+          "inside_diameter_mm": 90.0
+        },
+        "imperial": {
+          "outside_diameter_in": 4.3307,
+          "wall_thickness_in": 0.3937,
+          "inside_diameter_in": 3.5433
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 110",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 3.2",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 110,
+          "wall_thickness_mm": 15.1,
+          "inside_diameter_mm": 79.8
+        },
+        "imperial": {
+          "outside_diameter_in": 4.3307,
+          "wall_thickness_in": 0.5945,
+          "inside_diameter_in": 3.1417
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 110",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 2.5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 110,
+          "wall_thickness_mm": 18.3,
+          "inside_diameter_mm": 73.4
+        },
+        "imperial": {
+          "outside_diameter_in": 4.3307,
+          "wall_thickness_in": 0.7205,
+          "inside_diameter_in": 2.8898
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 125",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 125,
+          "wall_thickness_mm": 11.4,
+          "inside_diameter_mm": 102.2
+        },
+        "imperial": {
+          "outside_diameter_in": 4.9213,
+          "wall_thickness_in": 0.4488,
+          "inside_diameter_in": 4.0236
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 125",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 3.2",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 125,
+          "wall_thickness_mm": 17.1,
+          "inside_diameter_mm": 90.8
+        },
+        "imperial": {
+          "outside_diameter_in": 4.9213,
+          "wall_thickness_in": 0.6732,
+          "inside_diameter_in": 3.5748
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 125",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 2.5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 125,
+          "wall_thickness_mm": 20.8,
+          "inside_diameter_mm": 83.4
+        },
+        "imperial": {
+          "outside_diameter_in": 4.9213,
+          "wall_thickness_in": 0.8189,
+          "inside_diameter_in": 3.2835
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 140",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 140,
+          "wall_thickness_mm": 12.7,
+          "inside_diameter_mm": 114.6
+        },
+        "imperial": {
+          "outside_diameter_in": 5.5118,
+          "wall_thickness_in": 0.5,
+          "inside_diameter_in": 4.5118
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 140",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 3.2",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 140,
+          "wall_thickness_mm": 19.2,
+          "inside_diameter_mm": 101.6
+        },
+        "imperial": {
+          "outside_diameter_in": 5.5118,
+          "wall_thickness_in": 0.7559,
+          "inside_diameter_in": 4.0
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 140",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 2.5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 140,
+          "wall_thickness_mm": 23.3,
+          "inside_diameter_mm": 93.4
+        },
+        "imperial": {
+          "outside_diameter_in": 5.5118,
+          "wall_thickness_in": 0.9173,
+          "inside_diameter_in": 3.6772
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 160",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 160,
+          "wall_thickness_mm": 14.6,
+          "inside_diameter_mm": 130.8
+        },
+        "imperial": {
+          "outside_diameter_in": 6.2992,
+          "wall_thickness_in": 0.5748,
+          "inside_diameter_in": 5.1496
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 160",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 3.2",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 160,
+          "wall_thickness_mm": 21.9,
+          "inside_diameter_mm": 116.2
+        },
+        "imperial": {
+          "outside_diameter_in": 6.2992,
+          "wall_thickness_in": 0.8622,
+          "inside_diameter_in": 4.5748
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    },
+    {
+      "material": "PP-R/PPR",
+      "nominal_size": "DN/OD 160",
+      "standard": "ISO 15874-2:2013",
+      "series": "S 2.5",
+      "pressure_class": null,
+      "dimensions": {
+        "si": {
+          "outside_diameter_mm": 160,
+          "wall_thickness_mm": 26.6,
+          "inside_diameter_mm": 106.8
+        },
+        "imperial": {
+          "outside_diameter_in": 6.2992,
+          "wall_thickness_in": 1.0472,
+          "inside_diameter_in": 4.2047
+        }
+      },
+      "hydraulic_id_basis": "OD - 2 \u00d7 listed minimum/nominal wall thickness",
+      "source_id": "ISO_15874_2_2013",
+      "notes": [
+        "Pressure/application class must be selected from the applicable ISO 15874 design basis and manufacturer product data."
+      ]
+    }
+  ],
+  "limitations": [
+    "This is a design-stage candidate-size registry, not a replacement for licensed/current standards.",
+    "Plastic IDs are derived from nominal OD and the listed minimum/nominal wall thickness; verify actual manufacturer dimensions before final construction issue.",
+    "The imperial values for ISO metric systems are conversions for user display/calculation convenience; the governing size designation remains metric.",
+    "Ductile iron, stainless steel, CPVC and specialty systems are not dimension-populated in this version."
+  ]
+}

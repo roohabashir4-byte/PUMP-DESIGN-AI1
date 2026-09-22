@@ -49,7 +49,7 @@ class PumpDesignAgent:
         max_tool_rounds: int = 8,
         client: Any | None = None,
     ):
-        self.model = model or os.getenv("GROQ_MODEL", "qwen/qwen3.8-27b")
+        self.model = model or os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
         self.api_key = api_key or os.getenv("GROQ_API_KEY")
         self.rag_retriever = rag_retriever
         self.max_tool_rounds = max_tool_rounds

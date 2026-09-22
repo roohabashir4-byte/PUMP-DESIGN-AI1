@@ -209,6 +209,7 @@ class PumpDesignAgent:
             response = client.chat.completions.create(
                 model=self.model,
                 messages=messages,
+                max_tokens=800,
                 tools=self._tool_schemas(),
                 tool_choice="auto",
                 temperature=0,
